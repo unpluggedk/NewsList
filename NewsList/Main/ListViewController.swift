@@ -7,8 +7,12 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
+private let reuseIdentifierListItem = "listItemCell"
+private let reuseIdentifierMainItem = "listMainCell"
 
+class ListViewController: UIViewController {
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,6 +20,10 @@ class ListViewController: UIViewController {
     }
     
 
+    func setupCollectionView() {
+        collectionView.register(UINib(nibName: "NewsItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifierListItem)
+        collectionView.register(UINib(nibName: "NewsMainItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifierMainItem)
+    }
     /*
     // MARK: - Navigation
 
@@ -27,3 +35,5 @@ class ListViewController: UIViewController {
     */
 
 }
+
+
