@@ -13,6 +13,7 @@
 		9654D12E2579B5E6006C1993 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9654D12D2579B5E6006C1993 /* Assets.xcassets */; };
 		9654D1312579B5E6006C1993 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9654D12F2579B5E6006C1993 /* LaunchScreen.storyboard */; };
 		96E92DA42579B66A002921C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 96E92DA32579B66A002921C1 /* README.md */; };
+		96E92DB22579B7C6002921C1 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E92DB12579B7C6002921C1 /* DeviceInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		9654D1302579B5E6006C1993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9654D1322579B5E6006C1993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96E92DA32579B66A002921C1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		96E92DB12579B7C6002921C1 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		9654D1232579B5E5006C1993 /* NewsList */ = {
 			isa = PBXGroup;
 			children = (
+				96E92DB02579B7BC002921C1 /* Util */,
 				96E92DA62579B670002921C1 /* Resources */,
 				96E92DA72579B67B002921C1 /* SupportingFiles */,
 				96E92DAA2579B68D002921C1 /* Main */,
@@ -89,6 +92,14 @@
 				9654D12A2579B5E5006C1993 /* Main.storyboard */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		96E92DB02579B7BC002921C1 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				96E92DB12579B7C6002921C1 /* DeviceInfo.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9654D1252579B5E5006C1993 /* AppDelegate.swift in Sources */,
+				96E92DB22579B7C6002921C1 /* DeviceInfo.swift in Sources */,
 				9654D1272579B5E5006C1993 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
