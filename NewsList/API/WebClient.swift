@@ -8,7 +8,7 @@
 import Foundation
 
 public final class WebClient {
-    let session: URLSession
+    private let session: URLSession
     
     init() {
         let config = URLSessionConfiguration.default
