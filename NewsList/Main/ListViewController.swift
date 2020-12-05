@@ -23,6 +23,7 @@ class ListViewController: UIViewController {
     
     private lazy var dataSource = setupDataSource()
     private var newsItems: [NewsItem]?
+    private var imageCache = ImageCache()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -63,14 +64,14 @@ class ListViewController: UIViewController {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierMainItem, for: indexPath) as? NewsItemCollectionViewCell else {
                     fatalError("New cell can't be created")
                 }
-                cell.setNewsItem(newsItems[0])
+                cell.setNewsItem(newsItems[0], imageCache)
                 return cell
              
             case .listing:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierListItem, for: indexPath) as? NewsItemCollectionViewCell else {
                     fatalError("New cell can't be created")
                 }
-                cell.setNewsItem(newsItems[indexPath.row + 1])
+                cell.setNewsItem(newsItems[indexPath.row + 1], imageCache)
                 return cell
             }
         }
@@ -122,7 +123,7 @@ extension ListViewController {
         let itemsPerRow = DeviceInfo.isTablet ? 3 : 2
         
         // heightDimensionFraction: take 1:1 aspect ratio
-        let heightDimensionFraction: CGFloat = 1.0/(CGFloat(itemsPerRow) * CGFloat(itemsPerRow))
+        let heightDimensionFraction: CGFloat = 1 / 4
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(heightDimensionFraction))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: itemsPerRow)
