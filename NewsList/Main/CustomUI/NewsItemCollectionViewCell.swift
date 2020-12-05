@@ -7,15 +7,19 @@
 
 import UIKit
 
-class NewsItemCollectionViewCell: UICollectionViewCell {
+class NewsItemCollectionViewCell: UICollectionViewCell, NewsItemSettable {
 
     @IBOutlet weak var teaseImageView: UIImageView!
     @IBOutlet weak var headlineLabel: UILabel!
-    @IBOutlet weak var summaryText: UILabel!
+    @IBOutlet weak var summaryTextLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    func setNewsItem(_ newsItem: NewsItem) {
+        headlineLabel.text = newsItem.headline
+        summaryTextLabel.text = newsItem.summary
+    }
 }

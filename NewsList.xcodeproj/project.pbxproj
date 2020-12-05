@@ -26,6 +26,7 @@
 		96E92E09257A2258002921C1 /* NewsItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E92E07257A2258002921C1 /* NewsItemCollectionViewCell.xib */; };
 		96E92E0D257A2562002921C1 /* NewsMainItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E92E0B257A2562002921C1 /* NewsMainItemCollectionViewCell.swift */; };
 		96E92E0E257A2562002921C1 /* NewsMainItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E92E0C257A2562002921C1 /* NewsMainItemCollectionViewCell.xib */; };
+		96EF000A257B1091007F2ECB /* NewsItemSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EF0009257B1091007F2ECB /* NewsItemSettable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		96E92E07257A2258002921C1 /* NewsItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		96E92E0B257A2562002921C1 /* NewsMainItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsMainItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		96E92E0C257A2562002921C1 /* NewsMainItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsMainItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		96EF0009257B1091007F2ECB /* NewsItemSettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemSettable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				96E92E07257A2258002921C1 /* NewsItemCollectionViewCell.xib */,
 				96E92E0B257A2562002921C1 /* NewsMainItemCollectionViewCell.swift */,
 				96E92E0C257A2562002921C1 /* NewsMainItemCollectionViewCell.xib */,
+				96EF0009257B1091007F2ECB /* NewsItemSettable.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				96E92DCD2579BD5E002921C1 /* WebClient.swift in Sources */,
 				96E92DEA2579C99C002921C1 /* ListViewController.swift in Sources */,
 				96E92DE62579C917002921C1 /* APIError.swift in Sources */,
+				96EF000A257B1091007F2ECB /* NewsItemSettable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
