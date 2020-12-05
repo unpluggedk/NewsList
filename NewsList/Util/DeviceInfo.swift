@@ -7,9 +7,6 @@
 
 import UIKit
 
-
-import UIKit
-
 struct DeviceInfo {
     
     static var isTablet: Bool {

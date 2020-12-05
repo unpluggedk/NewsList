@@ -13,7 +13,7 @@ public struct NewsItem: Codable, Hashable {
     public let summary: String
     public let headline: String
     
-    public enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case identifier = "id"
         case tease
         case summary

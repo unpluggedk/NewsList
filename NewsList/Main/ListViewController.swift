@@ -13,10 +13,10 @@ private let reuseIdentifierMainItem = "listMainCell"
 class ListViewController: UIViewController {
     
     // MARK: CollectionView properties and enums
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, NewsItem>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, NewsItem>
+    private typealias DataSource = UICollectionViewDiffableDataSource<Section, NewsItem>
+    private typealias Snapshot = NSDiffableDataSourceSnapshot<Section, NewsItem>
     
-    enum Section: Int {
+    private enum Section: Int {
         case main
         case listing
     }
@@ -46,14 +46,14 @@ class ListViewController: UIViewController {
     }
     
 
-    func setupCollectionView() {
+    private func setupCollectionView() {
         collectionView.register(UINib(nibName: "NewsItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifierListItem)
         collectionView.register(UINib(nibName: "NewsMainItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifierMainItem)
         collectionView.dataSource = dataSource
         collectionView.collectionViewLayout = generateLayout()
     }
     
-    func setupDataSource() -> DataSource {
+    private func setupDataSource() -> DataSource {
         let dataSource = DataSource(collectionView: collectionView) { [unowned self] (collectionView, indexPath, asset) -> UICollectionViewCell? in
             
             guard let sectionLayoutKind = Section(rawValue: indexPath.section) else { return nil }
@@ -80,7 +80,7 @@ class ListViewController: UIViewController {
 }
 
 // MARK: - CollectionView UI
-extension ListViewController {
+private extension ListViewController {
 
     func generateLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout {
