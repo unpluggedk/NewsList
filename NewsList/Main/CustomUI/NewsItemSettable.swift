@@ -6,5 +6,5 @@
 //
 
 protocol NewsItemSettable {
-    func setNewsItem(_ newsItem: NewsItem)
+    func setNewsItem(_ newsItem: NewsItem, _ cache: ImageCache?)
 }
