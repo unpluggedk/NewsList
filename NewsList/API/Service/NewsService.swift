@@ -6,11 +6,14 @@
 //
 
 import Foundation
+
 private let newsFeedAPI = "https://s3.amazonaws.com/shrekendpoint/news.json"
 
 public class NewsService {
-    public func getNewsItem(completion: @escaping ([NewsItem]?, APIError?) -> ()) {
-        WebClient().loadJSON(path: newsFeedAPI, params: [:]) { (json, data, error) in
+    
+    @discardableResult
+    public func getNewsItem(completion: @escaping ([NewsItem]?, APIError?) -> ()) -> URLSessionDataTask? {
+        let task = WebClient().loadJSON(path: newsFeedAPI, params: [:]) { (json, data, error) in
             guard let _ = json, let data = data, error == nil else {
                 completion(nil, .unexpected(error))
                 return
@@ -24,8 +27,8 @@ public class NewsService {
                     if dataItem.type != "Section" { continue }
                     
                     if let items = dataItem.items {
-                        
                         for item in items {
+                            // Feed has duplicate news item entries, thus before adding.
                             if let newsItem = item.newsItemValue, !newsItems.contains(newsItem) {
                                 newsItems.append(newsItem)
                             }
@@ -37,6 +40,9 @@ public class NewsService {
             } catch {
                 print(error)
             }
-        }?.resume()
+        }
+        task?.resume()
+        return task
     }
 }
+
