@@ -69,7 +69,7 @@ class ListViewController: UIViewController {
             
             switch sectionLayoutKind {
             case .main:
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierMainItem, for: indexPath) as? NewsMainItemCollectionViewCell else {
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierMainItem, for: indexPath) as? NewsItemCollectionViewCell else {
                     fatalError("New cell can't be created")
                 }
                 cell.setNewsItem(newsItems[0])
