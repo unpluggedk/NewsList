@@ -34,4 +34,5 @@ Using compositional layout, in order to have first item stand out, we can choose
 2. Have the standout in a supplementary view. 
 (1) was chosen as funcionality-wise, all cells are the same and I would like to re-use the code.
 
-
+## Image Caching
+For performance reasons, added a simple image cache utilizing NSCache. 
