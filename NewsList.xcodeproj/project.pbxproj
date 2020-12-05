@@ -189,6 +189,8 @@
 			dependencies = (
 			);
 			name = NewsList;
+			packageProductDependencies = (
+			);
 			productName = NewsList;
 			productReference = 9654D1212579B5E5006C1993 /* NewsList.app */;
 			productType = "com.apple.product-type.application";
@@ -216,6 +218,8 @@
 				Base,
 			);
 			mainGroup = 9654D1182579B5E5006C1993;
+			packageReferences = (
+			);
 			productRefGroup = 9654D1222579B5E5006C1993 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
