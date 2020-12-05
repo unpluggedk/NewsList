@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct NewsItem: Codable {
+public struct NewsItem: Codable, Hashable {
     public let identifier: String
     public let tease: URL
     public let label: String
@@ -20,4 +20,11 @@ public struct NewsItem: Codable {
         case headline
     }
     
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
+    }
+    
+    public static func == (lhs: NewsItem, rhs: NewsItem) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
 }
