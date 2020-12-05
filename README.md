@@ -29,9 +29,19 @@ Selecting NewsItem to parse "items" payload involves less code, but will require
 selecting an codable enum, might seem like more code but has better sustainability and end up with a cleaner NewsItem structure with no optionals.
 
 
-
 ```
 public struct DataItem: Codable {
-	...
-	public let items: [DataItemType]?    // 
+...
+public let items: [DataItemType]?    // 
 ```
+
+## UI: Multiple sections vs Header
+
+Using compositional layout, in order to have first item stand out, we can choose either of :
+
+1. Using sections and divide main section versus rest
+
+2. Have the standout in a supplementary view. 
+
+
+
