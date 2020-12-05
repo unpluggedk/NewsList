@@ -8,14 +8,13 @@
 import Foundation
 
 public struct NewsItem: Codable, Hashable {
-    
-    public let identifier: UUID = UUID()
-    
+    public let identifier: String
     public let tease: URL
     public let summary: String
     public let headline: String
     
     public enum CodingKeys: String, CodingKey {
+        case identifier = "id"
         case tease
         case summary
         case headline

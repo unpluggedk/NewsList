@@ -26,7 +26,7 @@ public class NewsService {
                     if let items = dataItem.items {
                         
                         for item in items {
-                            if let newsItem = item.newsItemValue {
+                            if let newsItem = item.newsItemValue, !newsItems.contains(newsItem) {
                                 newsItems.append(newsItem)
                             }
                         }
