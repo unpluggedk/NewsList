@@ -1,12 +1,10 @@
 # NewsList
 
-Feeding from "https://s3.amazonaws.com/shrekendpoint/news.json",
+Feeding from "https://s3.amazonaws.com/shrekendpoint/news.json", do the following.
 
 # Requirements
 ## JSON data
-- Top level "data"
-  - "type": "Section"
-    - articles, videos, slideshows containing "tease", "label", and "headline". (and "id")
+- Top level "data", filter on type "Section". Display UI as described below.
 
 
 ## UI
@@ -22,26 +20,18 @@ List news in a following way:
   - summary: 2 lines on screen. ellipsizing if neccessary
 
 # Decision making
-## Parsing: type for "Items" - enum vs NewsItem
+## Parsing: Using JSON as [String: Any] vs. Serialize into Objects
+Although using json as [String: Any] might be less code, serializing into objects result in a much cleaner code for other sub-system.
+Thus, serializing into codable objects were used.
 
-Selecting NewsItem to parse "items" payload involves less code, but will require having more optionals in the NewsItem type as this tries to make everything a NewsItem regardless of type value.
-
-selecting an codable enum, might seem like more code but has better sustainability and end up with a cleaner NewsItem structure with no optionals.
-
-
-```
-public struct DataItem: Codable {
-...
-public let items: [DataItemType]?    // 
-```
+## Parsing: data > items serialization  
+Forcing "items" to be of a defined NewsItem type involves less API coding. However, it will result in having more optionals for sub-systems that use NewsItem instance.
+Using codable enum to handle this has more code in API, but results in a much cleaner code for other sub-system, as well as have a flexibility to add more types in future.
 
 ## UI: Multiple sections vs Header
-
 Using compositional layout, in order to have first item stand out, we can choose either of :
-
 1. Using sections and divide main section versus rest
-
 2. Have the standout in a supplementary view. 
-
+(1) was chosen as funcionality-wise, all cells are the same and I would like to re-use the code.
 
 
